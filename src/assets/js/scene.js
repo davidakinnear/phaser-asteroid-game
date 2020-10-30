@@ -2,7 +2,7 @@ import { Scene } from 'phaser';
 import Ship from './ship';
 import Keyboard from './keyboard';
 
-export default class SnakeScene extends Scene {
+export default class AsteroidScene extends Scene {
 
   /**
    * Use this function to load images which can be used in sprites
@@ -30,7 +30,7 @@ export default class SnakeScene extends Scene {
    */
   update(time, delta) {
 
-
+    console.log('is down pressed:', this.keyboard.isDownPressed());
   }
 
 }
