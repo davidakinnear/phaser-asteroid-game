@@ -3,6 +3,7 @@ export default class Keyboard {
 
   constructor(scene) {
     this.cursors = scene.input.keyboard.createCursorKeys();
+    
   }
 
   isUpPressed() {
@@ -19,5 +20,8 @@ export default class Keyboard {
 
   isRightPressed() {
     return this.cursors.right.isDown;
+  }
+  isSpacePressed() {
+    return this.cursors.space.isDown;
   }
 }

@@ -59,7 +59,9 @@ export default class Sprite {
    */
   setForwardAcceleration(acceleration) {
     if (!this.isDestroyed()) {
-
+        let x = Math.cos(this.getRotation())*acceleration;
+        let y = Math.sin(this.getRotation())*acceleration;
+        this.setAcceleration(x,y);
     }
   }
 
@@ -77,7 +79,9 @@ export default class Sprite {
    */
   setForwardVelocity(velocity) {
     if (!this.isDestroyed()) {
-      
+        let x = Math.cos(this.getRotation())*velocity;
+        let y = Math.sin(this.getRotation())*velocity;
+        this.setVelocity(x,y);
     }
   }
 
@@ -90,6 +94,9 @@ export default class Sprite {
   getRotation() {
     return this.sprite.rotation;
   }
+  setRotation(roation){
+      this.sprite.rotation = roation;
+  }
 
   getSpeed() {
     return this.sprite.body.speed;
@@ -99,5 +106,11 @@ export default class Sprite {
     if (!this.isDestroyed()) {
       this.sprite.setMaxVelocity(velocity);
     }
+  }
+  getX(){
+      return this.sprite.x;
+  }
+  getY(){
+      return this.sprite.y;
   }
 }
